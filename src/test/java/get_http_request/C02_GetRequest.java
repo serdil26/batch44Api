@@ -19,12 +19,13 @@ public class C02_GetRequest {
         /*response.prettyPeek();      //response'daki herseyi getirir
         response.then().log().all(); //response'daki herseyi getirir*/
 
+        //header test
         response.then()
                 .assertThat()
                 .statusCode(200)
                 .contentType("application/json; charset=utf-8")
                 .statusLine("HTTP/1.1 200 OK");
-        //body control
+        //body test
         response.then().
                 body("data[0].first_name", equalTo("George"),
                         "data[0].last_name", equalTo("Bluth"),
